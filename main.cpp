@@ -1,12 +1,13 @@
-//Nombre: Felix Montalico
 #include <iostream>
-#include "Arbolb.h"
 #include "Calculadora.h"
 
 int main()
-{   //Creamos un arbol
-    ArbolB arbolito;
-    //Inicializamos el arbol
-    arbolito.Inicializar();
+{//Se ingresa la operacion en forma de texto
+    std::string operacion;
+    std::cout << "Ingrese la suma: " << std::endl;
+    getline(std::cin,operacion);
+    Calculadora calculadora;
+    //Insertamos la cadena de texto en calculadora
+    calculadora.RealizarOperacion(operacion);
     return 0;
 }

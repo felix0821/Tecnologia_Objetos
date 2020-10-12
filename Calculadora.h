@@ -3,19 +3,23 @@
 #include <cinttypes>
 #include <iostream>
 #include <memory>
+#include "Arbolb.h"
+#include "Analizador.h"
 class Calculadora
 {
 public:
     //Constructores
     Calculadora();
-
-    void SetCadena(std::string cadena);
-    std::string GetCadena();
-
-
+    //Metodos de la calculadora
+    int GetResultado();
+    int Operacion(ArbolB::Arbol arbol);
+    void RealizarOperacion(std::string cadena);
 
 private:
-    std::string cadena;
+    //La calculadora contiene arbol y analizador
+    int Resultado;
+    ArbolB Arbol;
+    Analizador Analiza;
 };
 
 #endif // CALCULADORA_H

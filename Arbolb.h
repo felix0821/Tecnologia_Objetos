@@ -11,15 +11,17 @@ public:
     //Estructura nodo
     struct Nodo{
         int Valor{0};
-        char Simbolo{'x'};
+        char Simbolo{'~'};
         struct Nodo *Izquierda,*Derecha;
     };
     typedef struct Nodo *Arbol;
     //Metodos de mi arbol
-    void Agregar(Arbol &nodo,int valor);
-    void Agregar(Arbol &nodo,char simbolo);
+    void SetNodo(int valor);
+    void SetNodo(char simbolo);
+    Arbol GetNodo();
+
     void VerArbol(Arbol arbol, int n);
-    void Inicializar();
+
     //Destructor
     ~ArbolB()
     {
@@ -46,6 +48,11 @@ public:
         puntero=nuevoNodo;
         return puntero;
     }
+
+private:
+    Arbol arbol = NULL;
+    void SetNodo(Arbol &nodo,int valor);
+    void SetNodo(Arbol &nodo,char simbolo);
 };
 
 #endif // ARBOLB_H
